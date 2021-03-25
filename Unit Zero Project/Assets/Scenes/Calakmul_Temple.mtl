@@ -1,0 +1,189 @@
+newmtl Final:ConcreteColumn:Concrete_Column
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd concrete_marble_2088_2553_Small.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+map_Ks SpecularMap.png
+Ns 31.00
+newmtl Final:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Milestone_01_color_1K.jpg
+Ni 1.00
+newmtl Final:lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump -mm 0.682933 0.691051 DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert14SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert15SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap (1).png -bm 3
+Ni 1.00
+newmtl Final:lambert17SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_medieval_4193_5404_Small.jpg
+bump DisplacementMap (1).png -bm 4.851852
+Ni 1.00
+newmtl Final:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 3.663102
+Ni 1.00
+newmtl Final:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert20SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd TexturesCom_JapanForest_1K_hdri_sphere_tone.jpg
+Ni 1.00
+newmtl Final:lambert21SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert22SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert23SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert24SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert25SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert26SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1
+Ni 1.00
+newmtl Final:lambert27SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 3.02139
+Ni 1.00
+newmtl Final:lambert28SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 3.235294
+Ni 1.00
+newmtl Final:lambert29SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 1.042781
+Ni 1.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brick_stones_3791_4849_Small.jpg
+bump DisplacementMap.png -bm 3.074074
+Ni 1.00
+newmtl lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd TexturesCom_JapanForest_1K_hdri_sphere_tone.jpg
+Ni 1.00
