@@ -22,8 +22,6 @@ public class PlayerScript : MonoBehaviour
     public bool isGrounded = true;
     Vector3 moveVector;
 
-
-
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -42,6 +40,7 @@ public class PlayerScript : MonoBehaviour
 
         cc.Move(moveDir * moveSpeed * Time.deltaTime);
         cc.Move(moveVector * Time.deltaTime);
+
         if (cc.isGrounded)
         {
             moveVector.y = 0;

@@ -23,7 +23,13 @@ public class EnemyHealth : MonoBehaviour
 
     bool isDead;
 
-     void Start()
+    public GameObject Drop;
+
+    public Transform target;
+
+    List<GameObject> list = new List<GameObject>();
+
+    void Start()
     {
         _animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -31,11 +37,11 @@ public class EnemyHealth : MonoBehaviour
         slider.value = calculateHeatlh();
     }
 
-     void Update()
+    void Update()
     {
         slider.value = calculateHeatlh();
 
-        if(health >= maxHealth)
+        if (health >= maxHealth)
         {
             HealthBarUI.SetActive(false);
         }
@@ -43,14 +49,16 @@ public class EnemyHealth : MonoBehaviour
         {
             HealthBarUI.SetActive(true);
         }
-        if(health <= 0)
+        if (health <= 0)
         {
             if (!isDead)
             {
+                GetComponent<EnemyHealth>().enabled = false;
+                GetComponent<EnemyAi>().enabled = false;
                 StartCoroutine(StartDeath());
             }
         }
-        if(health > maxHealth)
+        if (health > maxHealth)
         {
             health = maxHealth;
         }
@@ -67,7 +75,7 @@ public class EnemyHealth : MonoBehaviour
         health += amount;
     }
 
-     void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         IDamageable Player = collision.gameObject.GetComponent<IDamageable>();
 
@@ -82,6 +90,12 @@ public class EnemyHealth : MonoBehaviour
         isDead = true;
         _animator.SetTrigger("Death");
         yield return new WaitForSeconds(3.3f);
+        Instantiate(Drop, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
+        GetComponent<EnemyHealth>().enabled = true;
+        GetComponent<EnemyAi>().enabled = true;
         Destroy(gameObject);
     }
 }
+
+
+

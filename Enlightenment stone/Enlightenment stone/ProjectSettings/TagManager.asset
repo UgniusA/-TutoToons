@@ -18,8 +18,8 @@ TagManager:
   - Player
   - PostProcessing
   - Enemy
-  - 
-  - 
+  - whatIsGround
+  - whatIsPlayer
   - 
   - 
   - 

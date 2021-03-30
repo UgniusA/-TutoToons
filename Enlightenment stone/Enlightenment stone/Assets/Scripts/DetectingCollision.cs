@@ -17,7 +17,7 @@ public class DetectingCollision : MonoBehaviour
 
     Animator _animator;
 
-     HealthBarController healthBar;
+    HealthBarController healthBar;
      ArmorBarController armorBar;
 
     private void Start()

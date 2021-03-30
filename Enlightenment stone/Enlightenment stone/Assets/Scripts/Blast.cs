@@ -43,6 +43,5 @@ public class Blast : MonoBehaviour
             enemy.addHealth(-damage);
         }
         Destroy(gameObject);
-
     }
 }
