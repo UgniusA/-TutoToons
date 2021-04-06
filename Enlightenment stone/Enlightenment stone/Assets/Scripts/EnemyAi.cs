@@ -13,6 +13,8 @@ public class EnemyAi : MonoBehaviour
 
     public Transform target;
 
+    public int enemyCount;
+
 
     //patroling
 
@@ -30,6 +32,8 @@ public class EnemyAi : MonoBehaviour
 
     private void Awake()
     {
+        player = FindObjectOfType<PlayerScript>().transform;
+        target = FindObjectOfType<PlayerScript>().transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -78,4 +82,9 @@ public class EnemyAi : MonoBehaviour
         agent.SetDestination(transform.position);
         transform.LookAt(target);
     }
+    public void OnDestroy()
+    {
+            FindObjectOfType<Spawner>().enemyCount--;
+    }
+
 }

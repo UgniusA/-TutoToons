@@ -45,12 +45,18 @@ public class BossAttack : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position + Vector3.up, dist, out hit, range, layerMask))
                 {
-                    if (!isHitting)
+                    PlayerScript layer = hit.collider.GetComponent<PlayerScript>();
+                    if (layer != null)
                     {
-                        enemyattack.Play();
-                        if (Physics.Raycast(transform.position + Vector3.up, dist, out hit, range, layerMask))
-                            Debug.Log("Hit");
-                        _animator.SetTrigger("Attack");
+                        {
+                            if (!isHitting)
+                            {
+                                enemyattack.Play();
+                                Debug.Log("Hit");
+                                _animator.SetTrigger("Attack");
+                            }
+                        }
+
                     }
                 }
             }
@@ -61,24 +67,28 @@ public class BossAttack : MonoBehaviour
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + Vector3.up, forward, out hit, range, layerMask))
 
+        if (Physics.Raycast(transform.position + Vector3.up, forward, out hit, range, layerMask))
         {
+            PlayerScript layer = hit.collider.GetComponent<PlayerScript>();
+            if (layer != null)
             {
-                if (armorBar.armor > 0)
                 {
-                    armorBar.TakeArmor(25);
-                }
-                else
-                {
-                    healthBar.TakeDamage(35);
+                    if (armorBar.armor > 0)
+                    {
+                        armorBar.TakeArmor(25);
+                    }
+                    else
+                    {
+                        healthBar.TakeDamage(35);
+                    }
                 }
             }
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            Debug.Log("Not Hit");
+            else
+            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+                Debug.Log("Not Hit");
+            }
         }
     }
 

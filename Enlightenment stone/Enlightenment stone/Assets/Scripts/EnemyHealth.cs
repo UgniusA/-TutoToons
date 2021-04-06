@@ -53,8 +53,22 @@ public class EnemyHealth : MonoBehaviour
         {
             if (!isDead)
             {
-                GetComponent<EnemyHealth>().enabled = false;
-                GetComponent<EnemyAi>().enabled = false;
+                if (GetComponent<EnemyAi>() != null)
+                {
+                    GetComponent<EnemyAi>().enabled = false;
+                }
+                if (GetComponent<EnemyHealth>() != null)
+                {
+                    GetComponent<EnemyHealth>().enabled = false;
+                }
+                if (GetComponent<DetectingCollision>() != null)
+                {
+                    GetComponent<DetectingCollision>().enabled = false;
+                }
+                else
+                {
+                    GetComponent<BossAttack>().enabled = false;
+                }
                 StartCoroutine(StartDeath());
             }
         }
@@ -91,8 +105,6 @@ public class EnemyHealth : MonoBehaviour
         _animator.SetTrigger("Death");
         yield return new WaitForSeconds(3.3f);
         Instantiate(Drop, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
-        GetComponent<EnemyHealth>().enabled = true;
-        GetComponent<EnemyAi>().enabled = true;
         Destroy(gameObject);
     }
 }
