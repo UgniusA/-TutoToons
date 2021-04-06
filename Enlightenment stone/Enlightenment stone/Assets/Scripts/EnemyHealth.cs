@@ -23,11 +23,10 @@ public class EnemyHealth : MonoBehaviour
 
     bool isDead;
 
-    public GameObject Drop;
+    public GameObject[] Drop;
 
     public Transform target;
 
-    List<GameObject> list = new List<GameObject>();
 
     void Start()
     {
@@ -105,7 +104,7 @@ public class EnemyHealth : MonoBehaviour
         isDead = true;
         _animator.SetTrigger("Death");
         yield return new WaitForSeconds(3.3f);
-        Instantiate(Drop, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
+        Instantiate(Drop[Random.Range(0, Drop.Length)], transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
         Destroy(gameObject);
     }
 }
