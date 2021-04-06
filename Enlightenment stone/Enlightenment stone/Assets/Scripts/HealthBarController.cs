@@ -43,6 +43,7 @@ public class HealthBarController : MonoBehaviour, IDamageable
     {
         isDead = true;
         GameObject.Find("Player");
+        FindObjectOfType<audioManager>().Play("PlayerDeath");
         gameObject.GetComponent<PlayerScript>().enabled = false;
         gameObject.GetComponent<Attack>().enabled = false;
         _animator.SetTrigger("Death");

@@ -21,6 +21,7 @@ public class HealthPotion : Useitems
     public override void Use()
     {
         base.Use();
+        FindObjectOfType<audioManager>().Play("drinkPotion");
         healthBar.TakeDamage(-20);
     }
 }

@@ -51,6 +51,7 @@ public class BossAttack : MonoBehaviour
                         {
                             if (!isHitting)
                             {
+                                FindObjectOfType<audioManager>().Play("EnemyBlast");
                                 enemyattack.Play();
                                 Debug.Log("Hit");
                                 _animator.SetTrigger("Attack");

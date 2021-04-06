@@ -7,6 +7,7 @@ public class ChangingScenes : MonoBehaviour
 {
 
     [SerializeField] GameObject DeathScreen;
+    [SerializeField] GameObject startMenu;
 
 
     public void OnMouseDrag()

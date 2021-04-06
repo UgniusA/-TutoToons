@@ -27,8 +27,8 @@ public class Destroyinggates : MonoBehaviour
     }
     public void explode()
     {
+        FindObjectOfType<audioManager>().Play("brickWall");
         Destroy(gameObject);
-
         for(int x = 0; x < cubesInRow; x++)
         {
             for(int y = 0; y < cubesInRow; y++)

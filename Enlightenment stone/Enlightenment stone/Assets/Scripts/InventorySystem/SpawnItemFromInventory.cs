@@ -18,5 +18,6 @@ public class SpawnItemFromInventory : MonoBehaviour
         GameObject itemSpawn = Instantiate(item, playerPos, Quaternion.identity);
         print(player.transform.position + " --- " + playerPos);
         itemSpawn.GetComponent<Pickups>().canPickUp = false;
+        FindObjectOfType<audioManager>().Play("PickingItem");
     }
 }

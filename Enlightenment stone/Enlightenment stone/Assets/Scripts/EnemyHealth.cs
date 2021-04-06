@@ -53,6 +53,7 @@ public class EnemyHealth : MonoBehaviour
         {
             if (!isDead)
             {
+                FindObjectOfType<audioManager>().Play("EnemyDeath");
                 if (GetComponent<EnemyAi>() != null)
                 {
                     GetComponent<EnemyAi>().enabled = false;

@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     MonoBehaviour target;
 
+    [SerializeField] GameObject FootSteps;
+    [SerializeField] AudioSource footsteps;
 
     [SerializeField] float moveSpeed = 5;
     [SerializeField] float rotationSpeed = 30;
@@ -64,6 +66,20 @@ public class PlayerScript : MonoBehaviour
         else
         {
             lookDir = moveDir;
+        }
+
+
+        if (hor + ver != 0)
+        {
+            footsteps.volume = 0.7f;
+        }
+        if(hor - ver != -0)
+        {
+            footsteps.volume = 0.7f;
+        }
+        else
+        {
+            footsteps.volume = 0;
         }
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDir), rotationSpeed * Time.deltaTime);
 

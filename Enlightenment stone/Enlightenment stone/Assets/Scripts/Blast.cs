@@ -29,6 +29,7 @@ public class Blast : MonoBehaviour
         Timer -= Time.deltaTime;
         if(Timer <= 0f)
         {
+            FindObjectOfType<audioManager>().Play("blastDestroy");
             Destroy(gameObject);
         }
     }
@@ -40,8 +41,10 @@ public class Blast : MonoBehaviour
 
         if (enemy != null)
         {
+            FindObjectOfType<audioManager>().Play("EnemyDamaged");
             enemy.addHealth(-damage);
         }
+        FindObjectOfType<audioManager>().Play("blastDestroy");
         Destroy(gameObject);
     }
 }

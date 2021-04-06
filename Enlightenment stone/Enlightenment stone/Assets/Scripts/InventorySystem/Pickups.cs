@@ -30,6 +30,7 @@ public class Pickups : MonoBehaviour
                         GameObject item = Instantiate(itemButton, inventory.inventorySlots[i].slot.transform, false);
                         if (item.GetComponent<Useitems>() != null)
                         {
+                            FindObjectOfType<audioManager>().Play("PickingItem");
                             item.GetComponent<Useitems>().i = i;
                         }
                         Destroy(gameObject);

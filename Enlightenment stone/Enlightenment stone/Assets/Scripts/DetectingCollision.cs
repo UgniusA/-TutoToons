@@ -58,10 +58,12 @@ public class DetectingCollision : MonoBehaviour
             {
                 if (armorBar.armor > 0)
                 {
+                    FindObjectOfType<audioManager>().Play("PlayerDamage");
                     armorBar.TakeArmor(20);
                 }
                 else
                 {
+                    FindObjectOfType<audioManager>().Play("PlayerDamage");
                     healthBar.TakeDamage(20);
                 }
             }

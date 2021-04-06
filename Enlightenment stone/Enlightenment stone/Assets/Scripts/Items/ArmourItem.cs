@@ -28,6 +28,7 @@ public class ArmourItem : Useitems
     {
         if (!inv.inventorySlots[slotID].isFull)
         {
+            FindObjectOfType<audioManager>().Play("wieldArmour");
             transform.parent = inv.inventorySlots[slotID].slot.transform;
             transform.localPosition = Vector3.zero;
             armorBar.TakeArmor(-armor);

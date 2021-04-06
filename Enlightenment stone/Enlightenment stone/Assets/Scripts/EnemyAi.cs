@@ -24,7 +24,7 @@ public class EnemyAi : MonoBehaviour
 
 
     //Attacking
-    public float timeBetweenAttacks;
+
 
     //States
     public float sightRange, attackRange;
@@ -53,7 +53,7 @@ public class EnemyAi : MonoBehaviour
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
-            agent.SetDestination(walkPoint);
+        agent.SetDestination(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
@@ -69,7 +69,7 @@ public class EnemyAi : MonoBehaviour
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-            walkPointSet = true;
+        walkPointSet = true;
     }
 
     private void ChasePlayer()
