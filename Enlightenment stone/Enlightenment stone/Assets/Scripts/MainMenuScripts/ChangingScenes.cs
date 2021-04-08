@@ -13,6 +13,7 @@ public class ChangingScenes : MonoBehaviour
     public void OnMouseDrag()
     {
         DeathScreen.SetActive(false);
+        AudioListener.volume = 1;
         SceneManager.LoadScene("MainMenu");
     }
 

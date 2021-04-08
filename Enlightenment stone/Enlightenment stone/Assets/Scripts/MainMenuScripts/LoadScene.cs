@@ -20,6 +20,13 @@ public class LoadScene : MonoBehaviour
     [SerializeField] GameObject FullScreen;
     [SerializeField] GameObject Slider;
 
+    public void Awake()
+    {
+        PlayButton.SetActive(true);
+        OptionsButton.SetActive(true);
+        QuitButton.SetActive(true);
+    }
+
     public void OnMouseDrag()
     {
         StartCoroutine(changingScene());

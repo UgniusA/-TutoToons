@@ -35,7 +35,7 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-                    
+
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
         moveDir = Vector3.forward * ver + Vector3.right * hor;
@@ -54,9 +54,19 @@ public class PlayerScript : MonoBehaviour
 
         if (moveDir.magnitude <= 0.1f)
         {
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity))
             {
+
+                if (hor +- ver != 0)
+                {
+                    footsteps.volume = 0.7f;
+                }
+                else
+                {
+                    footsteps.volume = 0f;
+                }
                 Vector3 direction = hitInfo.point - transform.position;
                 direction.y = 0f;
                 direction.Normalize();
@@ -67,20 +77,7 @@ public class PlayerScript : MonoBehaviour
         {
             lookDir = moveDir;
         }
-
-
-        if (hor + ver != 0)
-        {
-            footsteps.volume = 0.7f;
-        }
-        if(hor - ver != -0)
-        {
-            footsteps.volume = 0.7f;
-        }
-        else
-        {
-            footsteps.volume = 0;
-        }
+        
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDir), rotationSpeed * Time.deltaTime);
 
         _animator.SetFloat("VelocityX", moveDir.x, 0.1f, Time.deltaTime);

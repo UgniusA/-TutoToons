@@ -20,7 +20,7 @@ public class DetectingCollision : MonoBehaviour
     HealthBarController healthBar;
      ArmorBarController armorBar;
 
-    private void Start()
+    public void Start()
     {
         _animator = GetComponent<Animator>();
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -41,12 +41,24 @@ public class DetectingCollision : MonoBehaviour
                 {
                     if (!isHitting)
                     {if (Physics.Raycast(transform.position + Vector3.up, dist, out hit, range, layerMask))
-                        Debug.Log("Hit");
+                        hitAnimation();
                         _animator.SetTrigger("Attack");
                     }
                 }
             }
         }
+    }
+
+    public void hitAnimation()
+    {
+        StartCoroutine(startHitAnimation());
+    }
+
+
+    public IEnumerator startHitAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<audioManager>().Play("enemyHit");
     }
 
     void Hit()
@@ -70,8 +82,8 @@ public class DetectingCollision : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             Debug.Log("Not Hit");
+            Debug.DrawLine(transform.position, transform.TransformDirection(Vector3.forward) * 100, Color.white);
         }
     }
 

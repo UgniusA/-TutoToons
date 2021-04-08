@@ -15,6 +15,8 @@ public class EnemyAi : MonoBehaviour
 
     public int enemyCount;
 
+    public Spawner spawnScript;
+
 
     //patroling
 
@@ -30,14 +32,14 @@ public class EnemyAi : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
-    private void Awake()
+    public void Awake()
     {
         player = FindObjectOfType<PlayerScript>().transform;
         target = FindObjectOfType<PlayerScript>().transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    public void Update()
     {
         //check for sight
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -48,7 +50,7 @@ public class EnemyAi : MonoBehaviour
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
     }
 
-    private void Patrolling()
+    public void Patrolling()
     {
         if (!walkPointSet) SearchWalkPoint();
 
@@ -61,7 +63,7 @@ public class EnemyAi : MonoBehaviour
             walkPointSet = false;
     }
 
-    private void SearchWalkPoint()
+    public void SearchWalkPoint()
     {
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
@@ -72,19 +74,19 @@ public class EnemyAi : MonoBehaviour
         walkPointSet = true;
     }
 
-    private void ChasePlayer()
+    public void ChasePlayer()
     {
         agent.SetDestination(player.position);
     }
 
-    private void AttackPlayer()
+    public void AttackPlayer()
     {
         agent.SetDestination(transform.position);
         transform.LookAt(target);
     }
     public void OnDestroy()
     {
-            FindObjectOfType<Spawner>().enemyCount--;
+        spawnScript.enemyCount--;
     }
 
 }

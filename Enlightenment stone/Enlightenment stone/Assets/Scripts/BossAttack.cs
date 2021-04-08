@@ -25,7 +25,7 @@ public class BossAttack : MonoBehaviour
     ArmorBarController armorBar;
 
 
-    private void Start()
+    public void Start()
     {
         _animator = GetComponent<Animator>();
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -53,7 +53,6 @@ public class BossAttack : MonoBehaviour
                             {
                                 FindObjectOfType<audioManager>().Play("EnemyBlast");
                                 enemyattack.Play();
-                                Debug.Log("Hit");
                                 _animator.SetTrigger("Attack");
                             }
                         }
@@ -84,11 +83,6 @@ public class BossAttack : MonoBehaviour
                         healthBar.TakeDamage(35);
                     }
                 }
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                Debug.Log("Not Hit");
             }
         }
     }

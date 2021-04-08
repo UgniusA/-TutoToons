@@ -9,39 +9,41 @@ public class Pickups : MonoBehaviour
     public GameObject itemButton;
 
     public bool canPickUp = true;
-    private void Start()
+    public void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
 
-    private void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         if (canPickUp)
         {
             PlayerScript player = other.GetComponent<PlayerScript>();
             if (player != null)
+
             {
-                for (int i = 0; i < inventory.inventorySlots.Length; i++)
-                {
-                    if (inventory.inventorySlots[i].isFull == false)
+                    for (int i = 0; i < inventory.inventorySlots.Length; i++)
                     {
-                        inventory.inventorySlots[i].isFull = true;
-                        GameObject item = Instantiate(itemButton, inventory.inventorySlots[i].slot.transform, false);
-                        if (item.GetComponent<Useitems>() != null)
+                        if (inventory.inventorySlots[i].isFull == false)
                         {
-                            FindObjectOfType<audioManager>().Play("PickingItem");
-                            item.GetComponent<Useitems>().i = i;
+                            inventory.inventorySlots[i].isFull = true;
+                            GameObject item = Instantiate(itemButton, inventory.inventorySlots[i].slot.transform, false);
+                            if (item.GetComponent<Useitems>() != null)
+                            {
+                                FindObjectOfType<audioManager>().Play("PickingItem");
+                                item.GetComponent<Useitems>().i = i;
+                            }
+                            Destroy(gameObject);
+                            break;
                         }
-                        Destroy(gameObject);
-                        break;
                     }
                 }
-            }
+            
         }
     }
 
-    private void OnTriggerExit(Collider other)
+     void OnTriggerExit(Collider other)
     {
         PlayerScript player = other.GetComponent<PlayerScript>();
         if (player != null)
